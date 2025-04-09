@@ -22,7 +22,7 @@ const HomePage = () => {
         <FeatureCard
           title="READING CORNER"
           icon={<img src="/assets/books.png" alt="Book icon" />}
-          color="#D8B4E2"
+          color="#caaacd"
           link="/reading-corner"
           backgroundImage="/assets/cards/reading-bg.png"
         />
@@ -30,7 +30,7 @@ const HomePage = () => {
         <FeatureCard
           title="WORK JOURNEY"
           icon={<img src="/assets/working.png" alt="Laptop icon" />}
-          color="#E86C3A"
+          color="#d44902"
           link="/experience"
           backgroundImage="/assets/cards/work-bg.png"
         />
@@ -38,7 +38,7 @@ const HomePage = () => {
         <FeatureCard
           title="PROJECT HUB"
           icon={<img src="/assets/project.png" alt="Tools icon" />}
-          color="#FFBFBF"
+          color="#ffd4d4"
           link="/projects"
           backgroundImage="/assets/cards/project-bg.png"
         />
@@ -46,7 +46,7 @@ const HomePage = () => {
         <FeatureCard
           title="SEWING STUDIO"
           icon={<img src="/assets/sewing.png" alt="Sewing icon" />}
-          color="#BFE1FF"
+          color="#d6e8f7"
           link="/portfolio"
           backgroundImage="/assets/cards/sewing-bg.png"
         />
