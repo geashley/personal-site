@@ -1,0 +1,212 @@
+.experience-page {
+	width: 100%;
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 2rem;
+	box-sizing: border-box;
+	overflow-x: hidden;
+  }
+  
+  .experience-title {
+	font-family: var(--font-heading);
+	font-size: 3rem;
+	margin-top: 4rem;
+	margin-bottom: 3rem;
+	text-align: center;
+	color: var(--text-color);
+  }
+  
+  .experience-timeline {
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+	position: relative;
+  }
+  
+  .experience-row {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	gap: 0;
+	min-height: 250px;
+  }
+  
+  .experience-row.row-left {
+	grid-template-columns: 1.3fr 1fr;
+	grid-template-areas: "card image";
+  }
+  
+  .experience-row.row-right {
+	grid-template-columns: 1fr 1.3fr;
+	grid-template-areas: "image card";
+  }
+  
+  .experience-card {
+	grid-area: card;
+	position: relative;
+	border-radius: var(--card-radius);
+	padding: 2rem;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+	display: flex;
+	max-width: 100%;
+	box-sizing: border-box;
+	flex-direction: column;
+	z-index: 1;
+  }
+  
+  .experience-image-container {
+	grid-area: image;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+  
+  .experience-image {
+	max-width: 100%;
+	height: auto;
+	max-height: 350px;
+	object-fit: contain;
+  }
+  
+  .experience-date {
+	position: absolute;
+	top: 150px;
+	font-family: var(--font-body);
+	font-size: 2.2rem;
+	color: var(--text-color);
+	text-transform: uppercase;
+	text-align: center;
+	width: 100%;
+	z-index: 2;
+	text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+  }
+  
+  .experience-header {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1rem;
+  }
+  
+  .experience-job-title {
+	font-family: var(--font-body);
+	font-size: 2rem;
+	margin: 0 0 0.5rem 0;
+	color: var(--text-color);
+  }
+  
+  .experience-location {
+	font-size: 1.2rem;
+	margin: 0;
+	color: #555;
+  }
+  
+  .experience-details {
+	font-size: 1.3rem;
+  }
+  
+  .experience-details ul {
+	margin: 0;
+	padding-left: 1.5rem;
+  }
+  
+  .experience-details li {
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+	line-height: 1.5;
+  }
+  
+  .card-pink {
+	background-color:var(--accent-color-3);
+  }
+  
+  .card-purple {
+	background-color:var(--accent-color-1);
+  }
+  
+  .card-blue {
+	background-color:var(--accent-color-4);
+  }
+  
+  .card-orange {
+	background-color: var(--accent-color-2);
+  }
+
+.card-orange .experience-header h2,
+.card-orange .experience-header p,
+.card-orange .experience-details ul,
+.card-orange .experience-details li,
+.card-orange .experience-mobile-date {
+  	color: white;  
+}
+  
+  .card-yellow {
+	background-color:var(--accent-color-5);
+  }
+  
+  @media (max-width: 1400px) {
+	.experience-row {
+	  grid-template-columns: 1fr;
+	  grid-template-areas: "card";
+	  min-height: auto;
+	  width: 100%;
+	  max-width: 100%;
+	}
+  
+	.experience-row.row-right,
+	.experience-row.row-left {
+	  grid-template-columns: 1fr;
+	  grid-template-areas: "card";
+	}
+  
+	.experience-image-container {
+	  display: none;
+	}
+  
+	.experience-card {
+	  width: 100%;
+	  max-width: 100%;
+	  margin: 2rem auto;
+	}
+  
+	.experience-date {
+	  position: relative;
+	  top: auto;
+	  margin-top: 1rem;
+	  text-align: left;
+	  text-shadow: none;
+	}
+  
+	.experience-mobile-date {
+	  display: block;
+	  font-family: var(--font-body);
+	  font-size: 1.2rem;
+	  color: var(--text-color);
+	  text-transform: uppercase;
+	  margin-top: 1.5rem;
+	}
+  }
+  .experience-card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 4px 20px rgba(129, 128, 128, 0.589);}
+
+  @media (min-width: 1401px) {
+	.experience-mobile-date {
+	  display: none;
+	}
+  }
+  
+  @media (max-width: 768px) {
+	.experience-title {
+	  font-size: 2.5rem;
+	  margin-bottom: 2rem;
+	}
+  
+	.experience-card {
+	  padding: 1.5rem;
+	}
+  
+	.experience-job-title {
+	  font-size: 1.3rem;
+	}
+  }
+  

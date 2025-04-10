@@ -1,0 +1,337 @@
+.reading-page {
+	width: 100%;
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 4rem 2rem;
+	box-sizing: border-box;
+	background-color: var(--background-color);
+	font-family: var(--font-body);
+  }
+  
+  /* Top Banner Section */
+  .reading-banner-container {
+	max-width: 1500px;
+	position: relative;
+	width: 100%;
+	margin-bottom: 3rem;
+	height: 50vh;
+	padding-top: 6vh;
+  }
+  
+  .reading-banner {
+	width: 100%;
+	height: 100%;
+	min-height: 450px;
+	background-color: #1d1e3a;
+	border-radius: var(--card-radius);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	position: relative;
+	box-sizing: border-box;
+  }
+  
+  .reading-banner h1 {
+	padding-top: 2rem;
+	font-family: var(--font-body);
+	font-size: 3.8rem;
+	margin-bottom: 0.5rem;
+	text-align: center;
+	z-index: 2;
+  }
+  
+  .reading-banner p {
+	font-size: 1.6rem;
+	text-align: center;
+	z-index: 2;
+  }
+  
+  .banner-decoration {
+	position: absolute;
+	z-index: 1;
+  }
+  
+  .banner-lights {
+	top: -480px;
+	left: 0;
+	width: 100%;
+	height: auto;
+  }
+  
+  .banner-rocks {
+	bottom: -80px;
+	left: -30px;
+	width: 250px;
+	height: auto;
+  }
+  
+  .banner-mushrooms {
+	bottom: -80px;
+	right: -40px;
+	width: 250px;
+	height: auto;
+  }
+  
+  /* Bookshelf Section */
+  .bookshelf-container {
+	position: relative;
+	width: 100%;
+	margin-bottom: 3rem;
+  }
+  
+  .bookshelf {
+	width: 100%;
+	position: relative;
+  }
+  
+  .shelf-image {
+	width: 100%;
+	height: auto;
+	display: block;
+  }
+  
+  .shelf {
+	position: relative;
+	width: 100%;
+	margin-bottom: 1.5rem;
+  }
+  
+  .shelf-label {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	font-family: var(--font-heading);
+	font-size: 1.2rem;
+	color: #333;
+	text-transform: uppercase;
+  }
+  
+  .book-stacks {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: flex-end;
+	padding: 0 5%;
+	box-sizing: border-box;
+  }
+  
+  .book-stack {
+	position: relative;
+	cursor: pointer;
+	transition: transform 0.2s;
+	max-width: 12%;
+  }
+  
+  .book-stack:hover {
+	transform: translateY(-5px);
+  }
+  
+  .book-stack img {
+	width: 100%;
+	height: auto;
+	display: block;
+  }
+  
+  /* Updated book-info positioning */
+  .book-info {
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: white;
+	border-radius: 8px;
+	padding: 1rem;
+	width: 200px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	z-index: 10;
+	display: none;
+	margin-bottom: 10px; /* Add space between popup and book */
+  }
+  
+  /* Ensure popup stays within viewport for books at the edges */
+  .book-stack:first-child .book-info {
+	left: 0;
+	transform: none;
+  }
+  
+  .book-stack:last-child .book-info {
+	left: auto;
+	right: 0;
+	transform: none;
+  }
+  
+  .book-info.active {
+	display: block;
+  }
+  
+  .book-info h4 {
+	margin: 0 0 0.5rem 0;
+	font-family: var(--font-heading);
+	font-size: 1rem;
+  }
+  
+  .book-info p {
+	margin: 0;
+	font-size: 0.9rem;
+  }
+  
+  /* Add a small arrow at the bottom of the popup */
+  .book-info::after {
+	content: "";
+	position: absolute;
+	bottom: -10px;
+	left: 50%;
+	transform: translateX(-50%);
+	border-width: 10px 10px 0;
+	border-style: solid;
+	border-color: white transparent transparent;
+  }
+  
+  /* Adjust arrow position for edge books */
+  .book-stack:first-child .book-info::after {
+	left: 20%;
+  }
+  
+  .book-stack:last-child .book-info::after {
+	left: 80%;
+  }
+  
+  /* Favorites Section */
+  .favorites-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 2rem;
+	margin-bottom: 2rem;
+  }
+  
+  .favorites-list {
+	background-color: #0a4d3c;
+	border-radius: var(--card-radius);
+	padding: 2rem;
+	color: white;
+  }
+  
+  .favorites-list h2 {
+	font-family: var(--font-heading);
+	font-size: 2rem;
+	margin-top: 0;
+	margin-bottom: 1.5rem;
+  }
+  
+  .favorites-list ol {
+	margin: 0;
+	padding-left: 1.5rem;
+  }
+  
+  .favorites-list li {
+	margin-bottom: 0.5rem;
+	font-size: 1.1rem;
+  }
+  
+  .reading-furniture {
+	position: relative;
+	height: 100%;
+	min-height: 300px;
+  }
+  
+  .furniture-item {
+	position: absolute;
+  }
+  
+  .furniture-bookshelf {
+	top: 0;
+	right: 0;
+	width: 420px;
+	height: auto;
+  }
+  
+  .furniture-beanbag {
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 350px;
+	height: auto;
+  }
+  
+  .furniture-rug {
+	bottom: 0;
+	left: 30%;
+	width: 320px;
+	height: auto;
+  }
+  
+  .furniture-plant {
+	bottom: 20px;
+	right: 20px;
+	width: 400px;
+	height: auto;
+  }
+  
+  .furniture-lamp {
+	top: 50px;
+	left: 20px;
+	width: 400px;
+	height: auto;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 1200px) {
+	.book-stack {
+	  max-width: 13%;
+	}
+  }
+  
+  @media (max-width: 992px) {
+	.favorites-container {
+	  grid-template-columns: 1fr;
+	}
+  
+	.reading-furniture {
+	  min-height: 250px;
+	}
+  }
+  
+  @media (max-width: 768px) {
+	.reading-banner h1 {
+	  font-size: 2rem;
+	}
+  
+	.reading-banner p {
+	  font-size: 1rem;
+	}
+  
+	.book-stack {
+	  max-width: 14%;
+	}
+  
+	.book-info {
+	  width: 180px;
+	}
+  }
+  
+  @media (max-width: 576px) {
+	.book-stack {
+	  max-width: 15%;
+	}
+  
+	.book-info {
+	  width: 150px;
+	  padding: 0.75rem;
+	}
+  
+	.book-info h4 {
+	  font-size: 0.9rem;
+	}
+  
+	.book-info p {
+	  font-size: 0.8rem;
+	}
+  }
+  
