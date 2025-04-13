@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect } from "react"
-import Bookshelf from "../components/Bookshelf"
+import Book from "../components/Book"
 import "../styles/reading.css"
 
 // Sample book data - replace with your actual books
@@ -101,16 +101,56 @@ const ReadingCornerPage = () => {
 
       {/* Bookshelf Section */}
       <div className="bookshelf-container">
-        {/* Classics Shelf */}
-        <Bookshelf shelfImage="./assets/bookshelf.png" label="CLASSICS" books={classicsBooks} />
+       {/* Single bookshelf image */}
+	   <img src="/assets/bookshelf.png" alt="Bookshelf" className="bookshelf-image" />
 
-        {/* Fiction Shelf */}
-        <Bookshelf shelfImage="/placeholder.svg?height=80&width=1000" label="FICTION" books={fictionBooks} />
+		{/* Genre labels */}
+		<div className="shelf-label label-top">CLASSICS</div>
+		<div className="shelf-label label-middle">FICTION</div>
+		<div className="shelf-label label-bottom">NON-FICTION</div>
 
-        {/* Non-Fiction Shelf */}
-        <Bookshelf shelfImage="/placeholder.svg?height=80&width=1000" label="NON-FICTION" books={nonFictionBooks} />
+		 {/* Books positioned with percentage-based positioning */}
+		 <div className="shelf shelf-top">
+          {classicsBooks.map((book, index) => (
+            <Book
+              key={book.id}
+              image={book.image}
+              title={book.title}
+              description={book.description}
+              index={index}
+              totalBooks={classicsBooks.length}
+            />
+          ))}
+        </div>
+
+        {/* Middle shelf books */}
+        <div className="shelf shelf-middle">
+          {fictionBooks.map((book, index) => (
+            <Book
+              key={book.id}
+              image={book.image}
+              title={book.title}
+              description={book.description}
+              index={index}
+              totalBooks={fictionBooks.length}
+            />
+          ))}
+        </div>
+
+        {/* Bottom shelf books */}
+        <div className="shelf shelf-bottom">
+          {nonFictionBooks.map((book, index) => (
+            <Book
+              key={book.id}
+              image={book.image}
+              title={book.title}
+              description={book.description}
+              index={index}
+              totalBooks={nonFictionBooks.length}
+            />
+          ))}
+        </div>
       </div>
-
       {/* Favorites Section */}
       <div className="favorites-container">
         <div className="favorites-list">

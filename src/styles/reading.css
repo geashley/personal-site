@@ -54,84 +54,108 @@
   }
   
   .banner-lights {
-	top: -480px;
+	top: -20px;
 	left: 0;
 	width: 100%;
 	height: auto;
   }
   
   .banner-rocks {
-	bottom: -80px;
-	left: -30px;
-	width: 250px;
+	bottom: -14%;
+	left: -2%;
+	width: 16vw;
 	height: auto;
   }
   
   .banner-mushrooms {
-	bottom: -80px;
-	right: -40px;
-	width: 250px;
+	bottom: -14%;
+	right: -2%;
+	width: 16vw;
 	height: auto;
   }
   
-  /* Bookshelf Section */
+  /* Bookshelf Section - Updated for single bookshelf image with percentage positioning */
   .bookshelf-container {
 	position: relative;
 	width: 100%;
+	margin-top: 3rem;
 	margin-bottom: 3rem;
+	/* Use aspect ratio to maintain proportions */
+	aspect-ratio: 1 / 1.62;/* Adjust based on your bookshelf image aspect ratio */
+	max-height: 1200px;
   }
   
-  .bookshelf {
+  .bookshelf-image {
 	width: 100%;
-	position: relative;
+	height: 100%;
+	object-fit: contain;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
   }
-  
-  .shelf-image {
+
+  /* Position books on shelves with percentage-based positioning */
+.shelf {
+	position: absolute;
+	display: flex;
+	justify-content: space-around;
 	width: 100%;
-	height: auto;
-	display: block;
+	z-index: 2;
+  }
+  /* Genre labels with percentage positioning */
+  /* Top shelf positioning with percentage */
+.shelf-top {
+	top: 15%; /* Percentage-based positioning */
+	height: 15%; /* Percentage-based height */
   }
   
-  .shelf {
-	position: relative;
-	width: 100%;
-	margin-bottom: 1.5rem;
+  /* Middle shelf positioning with percentage */
+  .shelf-middle {
+	top: 48%; /* Percentage-based positioning */
+	height: 15%; /* Percentage-based height */
   }
   
+  /* Bottom shelf positioning with percentage */
+  .shelf-bottom {
+	top: 81%; /* Percentage-based positioning */
+	height: 15%; /* Percentage-based height */
+  }
+
   .shelf-label {
 	position: absolute;
-	bottom: 0;
-	left: 50%;
-	transform: translateX(-50%);
 	font-family: var(--font-heading);
 	font-size: 1.2rem;
 	color: #333;
 	text-transform: uppercase;
+	right: 45%; /* Percentage-based positioning */
+	z-index: 3;
   }
   
-  .book-stacks {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	display: flex;
-	justify-content: space-around;
-	align-items: flex-end;
-	padding: 0 5%;
-	box-sizing: border-box;
+  .label-top {
+	top: 22%; /* Percentage-based positioning */
   }
   
+  .label-middle {
+	top: 48%; /* Percentage-based positioning */
+  }
+  
+  .label-bottom {
+	top: 81%; /* Percentage-based positioning */
+  }
   .book-stack {
-	position: relative;
-	cursor: pointer;
-	transition: transform 0.2s;
-	max-width: 12%;
-  }
-  
-  .book-stack:hover {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s;
+  max-width: 80px; /* Adjust based on your book images */
+  margin: 0 10px;
+  z-index: 3; /* Ensure books are above everything */
+}
+
+.book-stack:hover {
 	transform: translateY(-5px);
   }
+  
   
   .book-stack img {
 	width: 100%;
@@ -139,7 +163,7 @@
 	display: block;
   }
   
-  /* Updated book-info positioning */
+  /* Book info popup */
   .book-info {
 	position: absolute;
 	bottom: 100%;
@@ -152,19 +176,7 @@
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 	z-index: 10;
 	display: none;
-	margin-bottom: 10px; /* Add space between popup and book */
-  }
-  
-  /* Ensure popup stays within viewport for books at the edges */
-  .book-stack:first-child .book-info {
-	left: 0;
-	transform: none;
-  }
-  
-  .book-stack:last-child .book-info {
-	left: auto;
-	right: 0;
-	transform: none;
+	margin-bottom: 10px;
   }
   
   .book-info.active {
@@ -192,6 +204,18 @@
 	border-width: 10px 10px 0;
 	border-style: solid;
 	border-color: white transparent transparent;
+  }
+  
+  /* Ensure popup stays within viewport for books at the edges */
+  .book-stack:first-child .book-info {
+	left: 0;
+	transform: none;
+  }
+  
+  .book-stack:last-child .book-info {
+	left: auto;
+	right: 0;
+	transform: none;
   }
   
   /* Adjust arrow position for edge books */
@@ -282,12 +306,6 @@
   }
   
   /* Responsive Adjustments */
-  @media (max-width: 1200px) {
-	.book-stack {
-	  max-width: 13%;
-	}
-  }
-  
   @media (max-width: 992px) {
 	.favorites-container {
 	  grid-template-columns: 1fr;
@@ -296,31 +314,57 @@
 	.reading-furniture {
 	  min-height: 250px;
 	}
+  
+	.furniture-bookshelf,
+	.furniture-plant,
+	.furniture-lamp,
+	.furniture-beanbag,
+	.furniture-rug {
+	  width: 50%;
+	  max-width: 300px;
+	}
   }
   
   @media (max-width: 768px) {
+	.reading-banner {
+	  min-height: 100px;
+	}
 	.reading-banner h1 {
 	  font-size: 2rem;
+	  margin: 1rem;
 	}
   
 	.reading-banner p {
 	  font-size: 1rem;
 	}
   
-	.book-stack {
-	  max-width: 14%;
-	}
-  
 	.book-info {
 	  width: 180px;
+	}
+  
+	.shelf-label {
+	  font-size: 1rem;
+	}
+	.banner-lights {
+		top: 5px;
+	  }
+	  
+	.banner-rocks {
+		bottom: -10%;
+		left: -6%;
+		width: 24vw;
+		height: auto;
+	}
+	
+	.banner-mushrooms {
+		bottom: -10%;
+		right: -6%;
+		width: 24vw;
+		height: auto;
 	}
   }
   
   @media (max-width: 576px) {
-	.book-stack {
-	  max-width: 15%;
-	}
-  
 	.book-info {
 	  width: 150px;
 	  padding: 0.75rem;
@@ -332,6 +376,40 @@
   
 	.book-info p {
 	  font-size: 0.8rem;
+	}
+  
+	.bookshelf-container {
+	  height: 400px;
+	}
+  
+	.shelf-top {
+	  top: 10px;
+	  height: 120px;
+	  padding-top: 40px;
+	}
+  
+	.shelf-middle {
+	  top: 150px;
+	  height: 120px;
+	  padding-top: 40px;
+	}
+  
+	.shelf-bottom {
+	  top: 280px;
+	  height: 120px;
+	  padding-top: 40px;
+	}
+  
+	.label-top {
+	  top: 120px;
+	}
+  
+	.label-middle {
+	  top: 250px;
+	}
+  
+	.label-bottom {
+	  top: 380px;
 	}
   }
   

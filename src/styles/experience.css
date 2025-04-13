@@ -1,6 +1,6 @@
 .experience-page {
 	width: 100%;
-	max-width: 1400px;
+	max-width: 1000px;
 	margin: 0 auto;
 	padding: 2rem;
 	box-sizing: border-box;
@@ -59,6 +59,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	margin: 2rem;
   }
   
   .experience-image {
@@ -70,9 +71,9 @@
   
   .experience-date {
 	position: absolute;
-	top: 150px;
+	top: 50%;
 	font-family: var(--font-body);
-	font-size: 2.2rem;
+	font-size: 1.5rem;
 	color: var(--text-color);
 	text-transform: uppercase;
 	text-align: center;
@@ -143,7 +144,7 @@
 	background-color:var(--accent-color-5);
   }
   
-  @media (max-width: 1400px) {
+  @media (max-width: 1000px) {
 	.experience-row {
 	  grid-template-columns: 1fr;
 	  grid-template-areas: "card";
@@ -189,7 +190,7 @@
 	transform: translateY(-4px);
 	box-shadow: 0 4px 20px rgba(129, 128, 128, 0.589);}
 
-  @media (min-width: 1401px) {
+  @media (min-width: 1000px) {
 	.experience-mobile-date {
 	  display: none;
 	}

@@ -29,7 +29,7 @@
 	padding-top: 6vh;
 	padding-bottom: 6rem;
 	height: 78vh;
-	max-width: 1500px;
+	max-width: 1000px;
 	border-radius: var(--card-radius);
 	min-height: 450px ;
   }
@@ -77,21 +77,21 @@
   
   .clouds {
 	position: absolute;
-	top: 4vh;
+	top: 10vh;
 	right: 0px;
-	width: 40vw;
+	width: 25vw;
 	height: auto;
   }
   
   .birds {
 	position: absolute;
 	top: 0px;
-	right: 200px;
-	width: 30vw;
+	right:0px;
+	width: 21vw;
 	height: auto;
   }
   .features-container {
-	max-width: 1500px;
+	max-width: 1000px;
 	display: grid;
 	grid-template-columns: 1.5fr 2fr; 
 	gap: 2rem;
@@ -99,6 +99,7 @@
 	width: 100%;
 	box-sizing: border-box;
 	margin: 0 auto;
+	padding-bottom: 10rem;
   }
   .profile-card {
 	background-color: var(--accent-color-4);
@@ -109,19 +110,23 @@
   }
   
   .profile-image {
-	padding: 2.5rem;
+	padding: 2.5rem 2.5rem 1rem 2.5rem;
 	border-radius: var(--card-radius);
 	width: calc(100% - 5rem);
 	height: auto;
   }
   
   .profile-content {
-	padding: 0rem 0rem 2rem 2rem;
+	padding: 0rem 2rem 2rem 2rem;
 	flex-grow: 1;
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+  }
+
+  .profile-content p {
+	margin: 10px;
   }
   .features-grid {
 	display: grid;
@@ -148,14 +153,15 @@
 	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.459);}
   
   .feature-card-icon img {
-	width: 12vw;
+	width: 80%;
 	object-fit: contain;
   }
   
   .feature-card-title {
 	font-family: var(--font-body);
-	font-size: 3vw;
-	margin-top: 1.5rem;  
+	font-size: 2.5vw;
+	margin-top: 0rem;  
+	margin-bottom: 0.5rem;
 }
   
   
@@ -164,8 +170,15 @@
 	.birds {
 		display: none;
 	}
+	.clouds {
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		width: 35vw;
+		height: auto;
+	  }
   }
-  @media (max-width: 1000px) {
+  @media (max-width: 800px) {
 	.hero h1 {
 	  font-size: 3rem;
 	}
@@ -188,6 +201,41 @@
 	  justify-content: space-between;
 	}
 	.clouds {
-		display: none;
-  }
+		position: absolute;
+		top: 80px;
+		right: 0px;
+		width: 50vw;
+		height: auto;
+	  }
 }
+@media (max-width: 600px) {
+	.hero-container {
+		min-height: 250px;
+		height: 75vh;
+	}
+	.hero h1 {
+		margin-left: 0.5rem;
+	}
+  
+	.hero p {
+		font-size: 1.3rem;
+		margin-left: 0.5rem;
+	}
+	.profile-content p{
+		font-size: 1.1rem;
+	}
+	.feature-card {
+		transform: translateY(-6px);
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.459);}
+	}
+	.feature-card-icon img {
+		width: 100%;
+		object-fit: contain;
+	  }
+	  
+	  .feature-card-title {
+		font-family: var(--font-body);
+		font-size: 1.2rem;
+		margin-top: 0rem;  
+		margin-bottom: 0.5rem;
+  }
